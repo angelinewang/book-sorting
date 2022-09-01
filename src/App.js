@@ -1,23 +1,23 @@
-import './App.css';
-import {Link} from 'react-router-dom'
-import React, { useEffect } from 'react';
+import "./App.css";
+
+import { useEffect, useState, React } from "react";
 
 function App() {
-
-  const [Books, setBooks] = React.useState([]);
+  const [Books, setBooks] = useState([]);
   useEffect(() => {
     async function getData() {
-      const response = await fetch();
-      const bookData
-      
+      const response = await fetch(
+        "http://openlibrary.org/search.json?author=tolkien"
+      );
+      const bookData = await response.json();
+      setBooks(bookData);
     }
-  })
+    getData();
+  }, []);
 
-  return (
-    <div className="App">
-     
-    </div>
-  );
+  console.log(Books);
+
+  return <div className="App"></div>;
 }
 
 export default App;
