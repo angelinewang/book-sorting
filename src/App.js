@@ -1,4 +1,5 @@
 import "./App.css";
+import Nav from "./components/Nav";
 
 import { useEffect, useState, React } from "react";
 
@@ -10,11 +11,17 @@ function App() {
         "http://openlibrary.org/search.json?author=tolkien"
       );
       const bookData = await response.json();
-      const response2 = await fetch("http://openlibrary.org/search.json?author=leo+tolstoy");
+      const response2 = await fetch(
+        "http://openlibrary.org/search.json?author=leo+tolstoy"
+      );
       const bookData2 = await response2.json();
-      const response3 = await fetch("http://openlibrary.org/search.json?author=dan+brown");
+      const response3 = await fetch(
+        "http://openlibrary.org/search.json?author=dan+brown"
+      );
       const bookData3 = await response3.json();
-      const response4 = await fetch("http://openlibrary.org/search.json?author=rowling");
+      const response4 = await fetch(
+        "http://openlibrary.org/search.json?author=rowling"
+      );
       const bookData4 = await response4.json();
       setBooks([bookData, bookData2, bookData3, bookData4]);
     }
@@ -22,8 +29,17 @@ function App() {
   }, []);
 
   console.log(Books);
+  setTimeout(() => {
+    console.log(Books[0].docs[0].author_name[0]);
+  }, "1000");
+  //books is an array of 4 objects, index 0 is tolkien, index 1 is tolstoy, index 2 is dan brown, index 3 is rowling. Books[0].docs.author_name[0] accesses the authors name
 
-  return <div className="App"></div>;
+  return (
+    <>
+      <Nav data={Books} />
+      <div className="App"></div>
+    </>
+  );
 }
 
 export default App;
