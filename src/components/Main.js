@@ -5,6 +5,7 @@ import Results from "./Results";
 
 function Main({ author }) {
   const books = author[0]?.docs;
+  //set the books to the 
   console.log(author);
   const [checkedState, setCheckedState] = React.useState(
     new Array(categories.length).fill(false)
