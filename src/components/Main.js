@@ -7,8 +7,8 @@ function Main({ checkedState, setCheckedState, author }) {
   const books = author?.docs;
   console.log(books);
   const handleChange = (event) => {
-    console.log(event)
-    setCheckedState({selectedOption: event});
+    console.log(event);
+    setCheckedState({ selectedOption: event });
   };
 
   console.log(checkedState);
@@ -17,7 +17,7 @@ if (books) {
     <div className="Main">
       <div className="MainBox">
 
-       
+    
                 <div className="SortBar">
                 <div className="SortBarBox">
                   <h3>Sort by</h3>
@@ -27,8 +27,7 @@ if (books) {
                       return (
                         <li
                           key={item.name}
-                          style={{ listStyleType: "none" }}
-                        >
+                          style={{ listStyleType: "none" }}>
                           <div className="categories-list-item">
                             <div className="categories-box">
                               <input
