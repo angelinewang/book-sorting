@@ -3,8 +3,10 @@ import './Main.css';
 import categories from "./utils/Categories"
 import Results from "./Results";
 
-function Main({books}){
+function Main({author}){
 
+    //? is if the object does not exist and it will give docs
+    const books = author[0]?.docs;
     const [checkedState, setCheckedState] = React.useState(new Array(categories.length).fill(false))
     
     console.log(checkedState)
@@ -41,7 +43,10 @@ return(
                 </form>
             </div>
         </div>
+        {/* If books exist show the results or else don't show it */}
+        {books &&
         <Results checkedState={checkedState} books={books}/>
+        }
     </div>
     </div>
 
