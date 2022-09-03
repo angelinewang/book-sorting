@@ -1,10 +1,11 @@
 import React from "react";
 import "./Nav.css";
 
-function Nav({ data, author }) {
+function Nav({ data, author, setCheckedState }) {
   function handleClick(id) {
     console.log(data, data[id])
     author(data[id]);
+    setCheckedState(false);
   }
 
   return (

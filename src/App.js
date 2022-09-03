@@ -8,6 +8,9 @@ function App() {
   const [books, setBooks] = useState([]);
   const [author, setAuthor] = useState([]);
 
+  const [checkedState, setCheckedState] = useState({}
+    );
+  
   useEffect(() => {
     async function getData() {
       const response = await fetch(
@@ -39,8 +42,8 @@ function App() {
     <div className="App">
       {books.length > 1 ? (
         <div className="AppBox">
-          <Nav data={books} author={setAuthor} />
-          <Main author={author} />
+          <Nav data={books} author={setAuthor} setCheckedState={setCheckedState}/>
+          <Main author={author} checkedState={checkedState} setCheckedState={setCheckedState} />
         </div>
       ) : (
         <div>Loading... </div>

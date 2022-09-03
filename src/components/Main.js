@@ -3,12 +3,9 @@ import "./Main.css";
 import categories from "./utils/Categories";
 import Results from "./Results";
 
-function Main({ author }) {
+function Main({ checkedState, setCheckedState, author }) {
   const books = author?.docs;
   console.log(books);
-  const [checkedState, setCheckedState] = React.useState({}
-  );
-
   const handleChange = (event) => {
     console.log(event)
     setCheckedState({selectedOption: event});
