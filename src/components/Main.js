@@ -7,8 +7,8 @@ function Main({ checkedState, setCheckedState, author }) {
   const books = author?.docs;
   console.log(books);
   const handleChange = (event) => {
-    console.log(event)
-    setCheckedState({selectedOption: event});
+    console.log(event);
+    setCheckedState({ selectedOption: event });
   };
 
   console.log(checkedState);
@@ -24,10 +24,7 @@ function Main({ checkedState, setCheckedState, author }) {
               {categories.map((item) => {
                 console.log(categories.indexOf(item));
                 return (
-                  <li
-                    key={item.name}
-                    style={{ listStyleType: "none" }}
-                  >
+                  <li key={item.name} style={{ listStyleType: "none" }}>
                     <div className="categories-list-item">
                       <div className="categories-box">
                         <input
@@ -35,7 +32,10 @@ function Main({ checkedState, setCheckedState, author }) {
                           id={`custom-checkbox-${categories.indexOf(item)}`}
                           name={item.name}
                           value={categories.indexOf(item)}
-                          checked={checkedState.selectedOption === categories.indexOf(item)}
+                          checked={
+                            checkedState.selectedOption ===
+                            categories.indexOf(item)
+                          }
                           onChange={() =>
                             handleChange(categories.indexOf(item))
                           }

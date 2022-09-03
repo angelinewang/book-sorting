@@ -1,9 +1,12 @@
 
-
-import React from 'react';
+import React from "react";
 import "./Results.css";
-import Book from './Book.js';
+import Book from "./Book.js";
+import { Link } from "react-router-dom";
+import BookDetails from "./BookDetails";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
+<<<<<<< HEAD
 function Results ({checkedState, books}) {
 // console.log(books.sort((a,b) => a.first_publish_year - b.first_publish_year))
     const [sortedBooks, setSortedBooks] = React.useState(books)
@@ -52,7 +55,7 @@ function Results ({checkedState, books}) {
                             <div key={item.key}>
                             <p>Sorting by Page Count</p>
                             <p>Index is {sortedBooks.indexOf(item) + 1}</p>
-                            <Book author={item.author_name} title={item.title} PublishYear={item.first_publish_year} PageCount={item.number_of_pages_median}/>
+                            <Book coverId={item.cover_i} author={item.author_name} title={item.title} PublishYear={item.first_publish_year} PageCount={item.number_of_pages_median}/>
                             </div>
                         )
                     }
@@ -69,4 +72,3 @@ function Results ({checkedState, books}) {
 }
 
 export default Results;
-
