@@ -8,14 +8,14 @@ function App() {
   const [books, setBooks] = useState([]);
   const [author, setAuthor] = useState([]);
 
-  // const author = //Add author chosen through Route clicked on in Header here
+  const author = //Add author chosen through Route clicked on in Header here
     useEffect(() => {
       async function getData() {
         const response = await fetch(
           "http://openlibrary.org/search.json?author=tolkien"
         );
         const bookData = await response.json();
-        // setBooks([bookData]);
+
         const response2 = await fetch(
           "http://openlibrary.org/search.json?author=leo+tolstoy"
         );
@@ -45,16 +45,11 @@ function App() {
 
   return (
     <div className="App">
-{ books.length > 1 ?
-  <div className="AppBox">
+      <div className="AppBox">
         <Header />
-        <Nav data={books} author={setAuthor}/>
-        <Main author={author} />
-      </div> : <div>Loading...</div>
-      //Loading State
-}
-      
-
+        <Nav data={books} />
+        <Main books={books[0].docs} author={author} />
+      </div>
     </div>
   );
 }
