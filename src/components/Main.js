@@ -63,8 +63,8 @@ function Main({ author }) {
             </form>
           </div>
         </div>
-        <Results checkedState={checkedState} books={books}/>
-    </div>
+        {books && <Results checkedState={checkedState} books={books} />}
+      </div>
     </div>
   );
 }

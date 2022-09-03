@@ -8,48 +8,43 @@ function App() {
   const [books, setBooks] = useState([]);
   const [author, setAuthor] = useState([]);
 
-  const author = //Add author chosen through Route clicked on in Header here
-    useEffect(() => {
-      async function getData() {
-        const response = await fetch(
-          "http://openlibrary.org/search.json?author=tolkien"
-        );
-        const bookData = await response.json();
+  useEffect(() => {
+    async function getData() {
+      const response = await fetch(
+        "http://openlibrary.org/search.json?author=tolkien"
+      );
+      const bookData = await response.json();
 
-        const response2 = await fetch(
-          "http://openlibrary.org/search.json?author=leo+tolstoy"
-        );
-        const bookData2 = await response2.json();
-        const response3 = await fetch(
-          "http://openlibrary.org/search.json?author=dan+brown"
-        );
-        const bookData3 = await response3.json();
-        const response4 = await fetch(
-          "http://openlibrary.org/search.json?author=rowling"
-        );
-        const bookData4 = await response4.json();
-        setBooks([bookData, bookData2, bookData3, bookData4]);
-      }
-      getData();
-    }, []);
+      const response2 = await fetch(
+        "http://openlibrary.org/search.json?author=leo+tolstoy"
+      );
+      const bookData2 = await response2.json();
 
-    // const myTimeout = setTimeout(, 5000);
+      const response3 = await fetch(
+        "http://openlibrary.org/search.json?author=dan+brown"
+      );
+      const bookData3 = await response3.json();
 
-//1. Wait 2. Why did it work with Nav
+      const response4 = await fetch(
+        "http://openlibrary.org/search.json?author=rowling"
+      );
+      const bookData4 = await response4.json();
 
-    // function myStopFunction() {
-    //   clearTimeout(myTimeout);
-    // }
-
-  // console.log(books[0].docs);
+      setBooks([bookData, bookData2, bookData3, bookData4]);
+    }
+    getData();
+  }, []);
 
   return (
     <div className="App">
-      <div className="AppBox">
-        <Header />
-        <Nav data={books} />
-        <Main books={books[0].docs} author={author} />
-      </div>
+      {books.length > 1 ? (
+        <div className="AppBox">
+          <Nav data={books} author={setAuthor} />
+          <Main author={author} />
+        </div>
+      ) : (
+        <div>Loading... </div>
+      )}
     </div>
   );
 }

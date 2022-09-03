@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import "./Results.css";
 import Book from './Book.js';
@@ -13,6 +15,8 @@ function Results ({checkedState, books}) {
             {/* Sorting/Ranking happends here depending on the checked box 2. Only allow one checked box at a time*/}
 {/* Finish the 3 types of sorting and be done */}
         {
+
+           
                 books.map((item) => {
         
                     if (books.indexOf(item) < 11 && checkedState === 0) {
@@ -27,6 +31,7 @@ function Results ({checkedState, books}) {
                                 </>
                             )
                         })
+                        
 
                     }
                     else if (books.indexOf(item) < 11 && checkedState === 1) {
