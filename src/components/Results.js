@@ -44,14 +44,12 @@ function Results ({checkedState, books}) {
     return(
         <div className="Results">
             <div className="ResultsBox">
-            <p>Results Component</p>
+ 
             {
               sortedBooks.map((item) => {
-                    if (sortedBooks.indexOf(item) < 10) {
+                    if (sortedBooks.indexOf(item) < 5) {
                         return (
                             <div key={item.key}>
-                            <p>Sorting by Page Count</p>
-                            <p>Index is {sortedBooks.indexOf(item) + 1}</p>
                             <Book author={item.author_name} title={item.title} PublishYear={item.first_publish_year} PageCount={item.number_of_pages_median}/>
                             </div>
                         )
@@ -59,6 +57,7 @@ function Results ({checkedState, books}) {
                 })
                 
             }
+       
             
             </div>
         </div>

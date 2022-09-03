@@ -1,7 +1,11 @@
 .Results {
     width: 75vw;
     height: 90vh;
-    border: solid black 2px;
+    /* border: solid black 2px; */
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px 20px;
+    background-color: blanchedalmond;
 }
 
 .ResultsBox {
@@ -9,4 +13,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }

@@ -1,5 +1,5 @@
 const categories = [
-    {name: "PublishDate"}, {name: "PageCount"}, {name: "Alphabetical"}
+    {name: "Publish Year"}, {name: "Page Count"}, {name: "Alphabetical (by Title)"}
 ]
 
 export default categories;

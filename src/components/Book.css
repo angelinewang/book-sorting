@@ -1,0 +1,20 @@
+.Book {
+    padding: 5px;
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+    width: 50vw;
+    height: 115px;
+    font-size: 1.6vh;
+    border: 1px solid black;
+}
+
+.Book:hover {
+    background-color: bisque;
+    color: black;
+}
+
+.BookBox p span {
+    font-weight: bold;
+}

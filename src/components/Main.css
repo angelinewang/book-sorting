@@ -1,7 +1,10 @@
 .SortBar {
     width: 25vw;
     height: 90vh; 
-    border: solid black 2px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px 20px;
+    background-color: blanchedalmond;
 }
 
 .SortBarBox {
@@ -21,3 +24,16 @@
     height: 100%;
     display: flex;
   }
+
+  .categories-box input {
+    padding: 5px;
+    background-color: brown;
+    color: white;  
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.categories-box input:hover {
+    background-color: bisque;
+    color: black;
+}

@@ -1,5 +1,4 @@
 import "./App.css";
-import Header from "./components/Header";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
 import { useEffect, useState, React } from "react";
@@ -14,7 +13,7 @@ function App() {
   useEffect(() => {
     async function getData() {
       const response = await fetch(
-        "http://openlibrary.org/search.json?author=tolkien"
+        "http://openlibrary.org/search.json?author=jrr+tolkien"
       );
       const bookData = await response.json();
 
