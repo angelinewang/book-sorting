@@ -3,6 +3,7 @@ import "./Nav.css";
 
 function Nav({ data, author }) {
   function handleClick(id) {
+    console.log(data, data[id])
     author(data[id]);
   }
 

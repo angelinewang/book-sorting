@@ -4,19 +4,14 @@ import categories from "./utils/Categories";
 import Results from "./Results";
 
 function Main({ author }) {
-  const books = author[0]?.docs;
-  console.log(author);
-  const [checkedState, setCheckedState] = React.useState(
-    new Array(categories.length).fill(false)
+  const books = author?.docs;
+  console.log(books);
+  const [checkedState, setCheckedState] = React.useState({}
   );
 
-  console.log(checkedState);
-
-  const handleChange = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-    setCheckedState(updatedCheckedState);
+  const handleChange = (event) => {
+    console.log(event)
+    setCheckedState({selectedOption: event});
   };
 
   console.log(checkedState);
@@ -33,17 +28,17 @@ function Main({ author }) {
                 console.log(categories.indexOf(item));
                 return (
                   <li
-                    key={categories.indexOf(item)}
+                    key={item.name}
                     style={{ listStyleType: "none" }}
                   >
                     <div className="categories-list-item">
                       <div className="categories-box">
                         <input
-                          type="checkbox"
+                          type="radio"
                           id={`custom-checkbox-${categories.indexOf(item)}`}
                           name={item.name}
-                          value={item.name}
-                          checked={checkedState[categories.indexOf(item)]}
+                          value={categories.indexOf(item)}
+                          checked={checkedState.selectedOption === categories.indexOf(item)}
                           onChange={() =>
                             handleChange(categories.indexOf(item))
                           }

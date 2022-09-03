@@ -2,8 +2,8 @@ import React from "react";
 import "./Book.css";
 
 function Book ({checked, author, title, PublishYear, PageCount}) {
-    console.log(checked)
-    console.log(author, title, PublishYear, PageCount)
+    // console.log(checked)
+    // console.log(author, title, PublishYear, PageCount)
     return (
         <div className="Book">
             <div className="BookBox">
