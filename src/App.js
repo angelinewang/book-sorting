@@ -37,10 +37,14 @@ function App() {
 
   return (
     <div className="App">
-      <div className="AppBox">
-        <Nav data={books} author={setAuthor} />
-        <Main author={author} />
-      </div>
+      {books.length > 1 ? (
+        <div className="AppBox">
+          <Nav data={books} author={setAuthor} />
+          <Main author={author} />
+        </div>
+      ) : (
+        <div>Loading... </div>
+      )}
     </div>
   );
 }
