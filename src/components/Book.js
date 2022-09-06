@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import "./Book.css";
 
 function Book({ id, checked, author, title, PublishYear, PageCount, coverId }) {
-  console.log(id, author, title, PublishYear, PageCount, coverId, checked);
-
   const [pageCount, setPageCount] = React.useState(PageCount);
 
   React.useEffect(() => {
