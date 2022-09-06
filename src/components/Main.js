@@ -16,8 +16,6 @@ if (books) {
   return (
     <div className="Main">
       <div className="MainBox">
-
-    
                 <div className="SortBar">
                 <div className="SortBarBox">
                   <h3>Sort by</h3>
