@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 function Home() {
     const [books, setBooks] = useState([]);
-  
+    
     useEffect(() => {
       async function getData() {
         Promise.all([

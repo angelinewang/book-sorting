@@ -33,7 +33,6 @@ function BookDetails(props) {
       console.log(book);
     }
     getData();
-    console.log(params.id);
   }, []);
 
   // let foundBook = books.map((item) => {
