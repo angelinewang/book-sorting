@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { useEffect } from "react";
 import "./Nav.css";
 
 function BookDetails({books}) {
