@@ -3,8 +3,7 @@
     height: 90vh;
     /* border: solid black 2px; */
     border: 1px solid black;
-    padding: 20px;
-    margin: 10px 20px;
+    /* margin: 10px 20px; */
     background-color: blanchedalmond;
 }
 
@@ -47,10 +46,11 @@
     background: #fff;
     border: none;
     padding: 10px;
-    color: blue;
+    color: brown;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
     margin: 0 10px;
     cursor: pointer;
+    font-weight: bold;
   }
   
   .paginationItem.active {

@@ -1,9 +1,10 @@
-import "./App.css";
 import Home from "./components/Home";
+
 import "./index.css";
 import BookDetails from "./components/BookDetails";
 import { React } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { useState } from "react";
 import { useEffect } from "react";
 
