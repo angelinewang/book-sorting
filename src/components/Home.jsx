@@ -4,24 +4,8 @@ import Main from "../components/Main";
 import Nav from "../components/Nav";
 import { useEffect, useState } from "react";
 
-function Home() {
-    const [books, setBooks] = useState([]);
-  
-    useEffect(() => {
-      async function getData() {
-        Promise.all([
-          fetch("http://openlibrary.org/search.json?author=jrr+tolkien"),
-          fetch("http://openlibrary.org/search.json?author=leo+tolstoy"),
-          fetch("http://openlibrary.org/search.json?author=dan+brown"),
-          fetch("http://openlibrary.org/search.json?author=jk+rowling"),
-        ])
-          .then((responses) =>
-            Promise.all(responses.map((response) => response.json()))
-          )
-          .then((values) => setBooks(values));
-      }
-      getData();
-    }, []);
+function Home({books}) {
+    
   
     const [author, setAuthor] = useState([]);
   

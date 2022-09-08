@@ -1,0 +1,39 @@
+body {
+    background-color: brown;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px 20px;
+    background-color: blanchedalmond;
+    width: 1300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+img {
+    margin-left: 33%;
+    padding: 30px;
+    background-color: blanchedalmond;
+    border: 1px solid white;
+}
+.description {
+    color: black;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    width: 800px;
+    margin-left: 250px;
+}
+
+h1 {
+    text-align: center;
+}
