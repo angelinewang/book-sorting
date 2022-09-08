@@ -49,7 +49,6 @@ if (specificBook) {
     <div>
       <p className="description">
         { 
-          // extras ? extras.description : null
         typeof extras.description === 'string' ? extras.description : (typeof extras.description === 'object'? extras.description.value : (<h1>No description available</h1>))
       }
       </p>
