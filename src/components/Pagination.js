@@ -9,8 +9,6 @@ function Pagination({ sortedBooks, pageLimit, dataLimit }) {
     window.scrollTo({ behavior: "smooth", top: "0px" });
   }, [currentPage]);
 
-  const [headShot, setHeadShot] = React.useState("")
-
   function goToNextPage() {
     setCurrentPage((page) => page + 1);
   }

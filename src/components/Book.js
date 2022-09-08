@@ -4,8 +4,6 @@ import "./Book.css";
 
 function Book({ id, author, title, PublishYear, PageCount }) {
 
-  const [pageCount, setPageCount] = React.useState(PageCount);
-
   React.useEffect(() => {
     if (!PageCount) {
       setPageCount("N/A");
