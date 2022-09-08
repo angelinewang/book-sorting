@@ -14,10 +14,10 @@ function App() {
   useEffect(() => {
     async function getData() {
       Promise.all([
-        fetch("http://openlibrary.org/search.json?author=jrr+tolkien"),
-        fetch("http://openlibrary.org/search.json?author=leo+tolstoy"),
-        fetch("http://openlibrary.org/search.json?author=dan+brown"),
-        fetch("http://openlibrary.org/search.json?author=jk+rowling"),
+        fetch("https://openlibrary.org/search.json?author=jrr+tolkien"),
+        fetch("https://openlibrary.org/search.json?author=leo+tolstoy"),
+        fetch("https://openlibrary.org/search.json?author=dan+brown"),
+        fetch("https://openlibrary.org/search.json?author=jk+rowling"),
       ])
         .then((responses) =>
           Promise.all(responses.map((response) => response.json()))
