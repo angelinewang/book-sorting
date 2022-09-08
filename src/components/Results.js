@@ -1,6 +1,5 @@
 import React from "react";
 import "./Results.css";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
 import Pagination from "./Pagination";
 
 function Results({ checkedState, books }) {
@@ -27,7 +26,7 @@ function Results({ checkedState, books }) {
             setSortedBooks(books)
         }
     
-    }, [books, checkedState]);
+    }, [books, checkedState, sortedBooks]);
   
     console.log(`These are checked: ${checkedState}`)
     return(

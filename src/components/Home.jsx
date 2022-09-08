@@ -2,7 +2,7 @@ import React from 'react'
 import "../App.css";
 import Main from "../components/Main";
 import Nav from "../components/Nav";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Home({books}) {
     

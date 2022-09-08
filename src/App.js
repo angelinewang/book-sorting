@@ -4,9 +4,6 @@ import "./index.css";
 import BookDetails from "./components/BookDetails";
 import { React } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Main from "./components/Main";
-import Pagination from "./components/Pagination";
-import Book from "./components/Book";
 import { useState } from "react";
 import { useEffect } from "react";
 

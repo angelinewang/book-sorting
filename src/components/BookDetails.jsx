@@ -13,7 +13,7 @@ function BookDetails({books}) {
       setExtras(extrasData)
     }
     getExtras()
-  }, [])
+  }, [params.id])
   console.log(extras)
 
  
