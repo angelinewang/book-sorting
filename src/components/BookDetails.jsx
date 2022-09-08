@@ -1,90 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useEffect } from "react";
-import "./Nav.css";
+import './BookDetails.css';
+
 
 function BookDetails({books}) {
   let params = useParams();
-  // const [book, setBook] = React.useState([]);
+  let [extras, setExtras] = useState([])
+  useEffect(() => {
+    async function getExtras() {
+      const res = await fetch(`https://openlibrary.org/works/${params.id}.json`)
+      const extrasData = await res.json();
+      setExtras(extrasData)
+    }
+    getExtras()
+  }, [])
+  console.log(extras)
 
-  console.log('hello world', params.id)
+ 
+
 
   const booksAll = books
     ? [...books[0].docs, ...books[1].docs, ...books[2].docs, ...books[3].docs]
     : null;
-  console.log(books[0].docs);
-  console.log(booksAll);
 
-  // React.useEffect(() => {
-  //   async function getData() {
-  //     Promise.all([
-  //       fetch("http://openlibrary.org/search.json?author=jrr+tolkien"),
-  //       fetch("http://openlibrary.org/search.json?author=leo+tolstoy"),
-  //       fetch("http://openlibrary.org/search.json?author=dan+brown"),
-  //       fetch("http://openlibrary.org/search.json?author=jk+rowling"),
-  //     ])
-  //       .then((responses) =>
-  //         Promise.all(responses.map((response) => response.json()))
-  //       )
-  //       .then((values) => setBooks(values));
-  //   }
-  //   getData();
-  // }, []);
-
-  // useEffect(() => {
-  //   async function getData() {
-  //     const response = await fetch(
-  //       "https://openlibrary.org" + params.id + ".json"
-  //     );
-  //     const bookData = await response.json();
-  //     book = setBook(bookData);
-  //   }
-  //   getData();
-  //   console.log(params.id);
-  // }, [book])
-
-  // let foundBook = books.map((item) => {
-  //   console.log(item);
-  //   item.map((el) => {
-  //     console.log(el);
-  //     if (el.key == params) {
-  //       return el;
-  //     }
-  //   });
-  // });
-
-// console.log(books[0].docs)
-
-let found = booksAll.find((item) => {
+let specificBook = booksAll.find((item) => {
   return item.key.substring(7, item.key.length) === params.id
 })
 
-if (found) {
-  console.log(found.title)
-  // coverId={item.cover_i}
-  //               author={item.author_name}
-  //               title={item.title}
-  //               PublishYear={item.first_publish_year}
-  //               PageCount={item.number_of_pages_median}
-  return ( <>
-  <div className=".navbar">
-        <Link to="/">
-          <div>Back</div>
-        </Link>
-        <div>Title: {found.title}</div>
-        <div>Author: {found.author_name}</div>
-        <div>Page count: {found.number_of_pages_median ? found.number_of_pages_median : "N/A"}</div>
-        <div>Publish Date: {found.first_publish_year}</div>
-      </div>
-      <img
-        src={`https://covers.openlibrary.org/b/id/${found.cover_i}-L.jpg`}
-        alt={found.title}
-      /> 
-</>
+if (specificBook) {
+  return (
+  <>
+    <div className="heading">
+          <Link to="/">
+            <button>Back</button>
+          </Link>
+          <div>Title: {specificBook.title}</div>
+          <div>Author: {specificBook.author_name}</div>
+          <div>Page count: {specificBook.number_of_pages_median ? specificBook.number_of_pages_median : "N/A"}</div>
+          <div>Publish Date: {specificBook.first_publish_year}</div>
+    </div>
+    {specificBook.cover_i ?  (
+       <img
+       src={`https://covers.openlibrary.org/b/id/${specificBook.cover_i}-L.jpg`}
+       alt={specificBook.title}
+       /> 
+    ) : <h1>No image available</h1>}
+   
+    <div>
+      <p className="description">
+        { 
+          // extras ? extras.description : null
+        typeof extras.description === 'string' ? extras.description : (typeof extras.description === 'object'? extras.description.value : (<h1>No description available</h1>))
+      }
+      </p>
+    </div>
+  </>
   )
 }
 }
 
 export default BookDetails;
-
-//route needs to be created for 'back' link to work
