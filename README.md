@@ -79,8 +79,6 @@ End of Brief
 ## Part 7 Planning 
 At first, we wireframed the application through Excalidraw:
 ![image](./public/assets/project-2-excalidraw)
---> Change this into an image of the wireframe DONE
---> Add this image to the directory
 
 Then, we used Trello to organise initial tasks, including the setup of different components and how those components' work was split between us. 
 
