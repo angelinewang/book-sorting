@@ -78,7 +78,7 @@ End of Brief
 
 ## Part 7 Planning 
 At first, we wireframed the application through Excalidraw:
-![image](./project-2-excalidraw)
+![image](./public/assets/project-2-excalidraw)
 --> Change this into an image of the wireframe DONE
 --> Add this image to the directory
 
