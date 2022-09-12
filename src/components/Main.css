@@ -16,7 +16,7 @@
 
 .Main {
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
   }
   
   .MainBox {
@@ -33,7 +33,8 @@
     transition: 0.3s;
 }
 
-.categories-box input:hover {
+.categories-box:hover {
     background-color: bisque;
     color: black;
+    cursor: pointer;
 }

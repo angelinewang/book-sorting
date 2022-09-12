@@ -9,6 +9,8 @@ function Pagination({ sortedBooks, pageLimit, dataLimit }) {
     window.scrollTo({ behavior: "smooth", top: "0px" });
   }, [currentPage]);
 
+  // const [headShot, setHeadShot] = React.useState("")
+
   function goToNextPage() {
     setCurrentPage((page) => page + 1);
   }
@@ -40,9 +42,31 @@ function Pagination({ sortedBooks, pageLimit, dataLimit }) {
       <div className="ResultsBox">
         {getPaginatedData().map((item) => {
           console.log(item.key);
+
+          // if(item.author_name[0].includes("Tolkien")) {
+          //   console.log(item.author_name)
+          //   setHeadShot("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg/1200px-J._R._R._Tolkien%2C_ca._1925.jpg")
+          // }
+
+          // else if (item.author_name[0].includes("Tolstoy")) {
+          //   console.log(item.author_name)
+          //   setHeadShot("https://upload.wikimedia.org/wikipedia/commons/c/c6/L.N.Tolstoy_Prokudin-Gorsky.jpg")
+          // }
+
+          // else if (item.author_name[0].includes("Brown")) {
+          //   console.log(item.author_name)
+          //   setHeadShot("https://upload.wikimedia.org/wikipedia/commons/8/8b/Dan_Brown_bookjacket_cropped.jpg")
+          // }
+
+          // else if (item.author_name[0].includes("Rowling")) {
+          //   console.log(item.author_name)
+          //   setHeadShot("https://upload.wikimedia.org/wikipedia/commons/5/5d/J._K._Rowling_2010.jpg")
+          // }
+          // console.log(headShot)
           return (
             <div key={item.key}>
               <Book
+                // headShot={headShot}
                 id={item.key.substring(7, item.key.length)}
                 coverId={item.cover_i}
                 author={item.author_name}
